@@ -8,5 +8,5 @@ CIFAR-10.
 Run multiple versions of the model with different hyperparamters.
 
 ## End Goal
-TBD.
+Identify the optimal set of hyperparameters that produce the model that has the best accuracy
 
