@@ -74,7 +74,7 @@ model.add(Activation('softmax'))
 opt = keras.optimizers.rmsprop(lr=learning_rate, decay=1e-6)
 
 # Let's train the model using RMSprop
-model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
+model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy', keras.metrics.AUC()])
 
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
@@ -116,3 +116,4 @@ print('Saved trained model at %s ' % model_path)
 scores = model.evaluate(x_test, y_test, verbose=1)
 print('Test loss:', scores[0])
 print('Test accuracy:', scores[1])
+print('Test AUC: ', scores[2])
